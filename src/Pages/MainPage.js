@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function OneComponent(props) {
   return (
+    <>
     <main>
       <div className="textContainer">
         <h2>{props.mediumText}</h2>
@@ -16,11 +17,24 @@ function OneComponent(props) {
       </div>
       <div className="imgContainer mainImg">
         <img
-          src={props.imgLink}
+          src="who.png"
           alt="Image"
+         
         />
+        <h4>DOWNLOAD THE APP </h4>
       </div>
     </main>
+    <div>
+    <div id="footer">
+        <div className="container">
+          <p>
+            <center>Rights Reserved by Pothole Patrol @2023 (Group No:43)</center>
+            
+          </p>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
 

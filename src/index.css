@@ -2,7 +2,7 @@
 
 /*===== Fonts =====*/
 :root{
-  --body-font: 'Hind Siliguri', sans-serif;
+  --body-font: 'Vina Sans', sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
@@ -11,10 +11,10 @@
 /*==== Colors =====*/
 
 :root{
-  --first-color: #3fba96;
+  --first-color: #43A6C6;
   --second-color: #ffffff;
   --third-color: #131313;
-  --fourth-color: #1f735a;
+  --fourth-color: #0C2D48;
 }
 
 @media screen and (min-width: 768px){
@@ -72,7 +72,9 @@ body{
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+  overflow: hidden;
   color: var(--third-color);
+  background-color: #F0F8FF;
 }
 
 /*===== Navar =====*/
@@ -82,13 +84,21 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--pd-6);
+  padding-right:100px ;
+  padding-left:90px  ;
+  margin-bottom: 70px;
 }
 
 #navbar ul {
   display: flex;
   gap: 4rem;
 }
+
+#navbar img {
+  padding-top: 20px;
+  height: 90px;
+}
+
 
 .btn{
   padding: var(--pd-1) var(--pd-6);
@@ -125,18 +135,34 @@ main{
   display: flex;
   justify-content: space-between;
   margin: var(--mb-6);
+  padding-left: 50px;
+
 }
+
+main h4{
+ padding-left: 240px;
+ color:#43A6C6; 
+ 
+}
+main h5{
+  padding-left: 230px;
+  color:#43A6C6; 
+ }
+
 
 .textContainer h2{
   color: var(--first-color);
   font-weight: bold;
+  
 }
 
 .textContainer h1{
   font-size: var(--big-font-size);
   line-height: 1.2;
   font-weight: bolder;
+  line-height: 0.5;
   margin: 0;
+  color:#0C2D48;
 }
 
 .textContainer p{
@@ -151,19 +177,20 @@ main{
 
 .textContainer button{
   padding: var(--pd-2) var(--pd-6);
-  border-radius: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 5px;
+  margin-right: 20px;
 }
 
 .imgContainer img{
   width: 520px;
-  margin-top: var(--mb-0);
+ 
 }
 
+
 .mainImg img{
-  width: 550px;
-  margin-top: var(--mb-7);
+  width:700px;
+  height: 400px;
+  padding-right: 50px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -202,3 +229,16 @@ main{
 .aboutText button{
   border-radius: 5px;
 }
+
+/* ####footer */
+#footer {
+  background: #caf0fe;
+  padding-bottom: 15px;
+  margin-top: 80px;
+};
+#footer p {
+  color: #0C2D48;
+  padding-top: 10px;
+
+}
+

@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Form.css"
+
 
 function VideoUpload() {
   const [videoFile, setVideoFile] = useState(null);
   const [camera_no, setCamera_no] = useState("");
   const [area_name, setArea_name] = useState("");
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
   const [uploadStatus, setUploadStatus] = useState("");
+  const [uploadProgress, setUploadProgress] = useState(0);
+
 
   const handleVideoUpload = (event) => {
     setVideoFile(event.target.files[0]);
@@ -45,13 +49,20 @@ function VideoUpload() {
       formData.append("camera_no", camera_no);
       formData.append("area_name", area_name);
       formData.append("geo_location", data);
+      
       try {
         const response = await axios.post(
-          "http://127.0.0.1:8000/api/traffic-pothole-report/",
+          "http://localhost:8000/api/videos/upload/",
           formData,
           {
             headers: {
               "Content-Type": "multipart/form-data",
+            },
+            onUploadProgress: (progressEvent) => {
+              const progress = Math.round(
+                (progressEvent.loaded / progressEvent.total) * 100
+              );
+              setUploadProgress(progress);
             },
           }
         );
@@ -66,7 +77,8 @@ function VideoUpload() {
   };
 
   return (
-    <div>
+    <div className="align">
+      <center><h2>Upload the video here!!</h2></center>
       <form onSubmit={handleUpload}>
         <div>
           <label htmlFor="camera_no">Camera No:</label>
@@ -89,8 +101,9 @@ function VideoUpload() {
           <input type="file" id="videoFile" accept="video/*" onChange={handleVideoUpload} />
         </div>
         
-        <button type="submit">Upload</button>
+        {true && <button type="submit">Upload</button>}
       </form>
+      {uploadProgress > 0 && <progress value={uploadProgress} max="100" />}
       {uploadStatus && <p>{uploadStatus}</p>}
     </div>
   );
