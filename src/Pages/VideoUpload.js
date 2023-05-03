@@ -37,22 +37,16 @@ function VideoUpload() {
     event.preventDefault();
     if (videoFile) {
 
-    const data = JSON.stringify({
-            "type": "Point",
-            "coordinates": [
-              latitude,
-              longitude
-          ]
-          })
       const formData = new FormData();
       formData.append("video_file", videoFile);
       formData.append("camera_no", camera_no);
       formData.append("area_name", area_name);
-      formData.append("geo_location", data);
+      formData.append("latitude", latitude);
+      formData.append("longitude", longitude);
       
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/videos/upload/",
+          "http://localhost:8000/api/traffic-pothole-report/",
           formData,
           {
             headers: {
