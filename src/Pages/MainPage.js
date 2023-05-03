@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function OneComponent(props) {
   return (
     <>
@@ -14,11 +15,15 @@ function OneComponent(props) {
         <Link to="/Video_upload">
         <button  className="btn">{props.btn}</button>
         </Link>
+        <a href>
+        <button  className="btn">Analysis</button>
+        </a>
+        
       </div>
       <div className="imgContainer mainImg">
         <img
           src="who.png"
-          alt="Image"
+          alt="Idk"
          
         />
         <h4>DOWNLOAD THE APP </h4>
@@ -28,7 +33,7 @@ function OneComponent(props) {
     <div id="footer">
         <div className="container">
           <p>
-            <center>Rights Reserved by Pothole Patrol @2023 (Group No:43)</center>
+            <center>Rights Reserved by Pothole Patrol @2023 (potholepatrolteam@gmail.com)</center>
             
           </p>
         </div>

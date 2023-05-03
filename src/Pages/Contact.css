@@ -1,7 +1,10 @@
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 20px;
+    color: #0C2D48;
+    margin-bottom: 95px;
   }
   
   label {
@@ -32,8 +35,14 @@ form {
     cursor: pointer;
   }
   
-  textarea{
-    width: 400px;
-    height: 100px;
+  .tall{
+    height: 95px;
   }
-
+  #footer {
+    background: #caf0fe;
+  
+  };
+  #footer p {
+    color: #0C2D48;
+  
+  }

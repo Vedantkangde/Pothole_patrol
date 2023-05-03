@@ -64,9 +64,14 @@ function VideoUpload() {
               );
               setUploadProgress(progress);
             },
+       
           }
         );
         setUploadStatus(response.data.message);
+        setVideoFile();
+        setCamera_no('');
+        setLatitude(0);
+        setLongitude(0)
       } catch (error) {
         console.error(error);
         setUploadStatus("An error occurred while uploading the video");

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 export const Navbar = () => {
@@ -10,11 +11,11 @@ export const Navbar = () => {
         />
       </a>
       <ul id="navlist">
-        
       </ul>
-      <a>
-      <button className="btn">Analysis</button>
-      </a>
+      <Link to="contact">
+      <button className="btn">Contact us</button>
+      </Link>
+      
     </nav>
   );
 };
