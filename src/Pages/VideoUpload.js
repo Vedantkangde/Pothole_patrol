@@ -46,7 +46,7 @@ function VideoUpload() {
       
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/traffic-pothole-report/",
+          "http://192.168.34.50:8000/api/traffic-pothole-report/",
           formData,
           {
             headers: {
@@ -57,10 +57,13 @@ function VideoUpload() {
                 (progressEvent.loaded / progressEvent.total) * 100
               );
               setUploadProgress(progress);
+              
+             
             },
        
           }
         );
+        alert(`Your video is uploaded succesfully.`)
         setUploadStatus(response.data.message);
         setVideoFile();
         setCamera_no('');

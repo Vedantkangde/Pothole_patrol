@@ -15,7 +15,7 @@ function OneComponent(props) {
         <Link to="/Video_upload">
         <button  className="btn">{props.btn}</button>
         </Link>
-        <a href>
+        <a href="http://localhost:8501/">
         <button  className="btn">Analysis</button>
         </a>
         
